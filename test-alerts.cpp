@@ -12,3 +12,6 @@ TEST_CASE("infers the breach according to limits") {
 TEST_CASE("Normal value test") {
   REQUIRE(inferBreach(25, 20, 30) == NORMAL);
 }
+TEST_CASE("Same value test") {
+  REQUIRE(inferBreach(20, 20, 20) == NORMAL);
+}
