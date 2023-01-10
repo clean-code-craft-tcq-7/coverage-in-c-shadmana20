@@ -57,7 +57,7 @@ TEST_CASE("F2_T6") {
 
 TEST_CASE("send email alert high") {
 batteryCharTest1.coolingType = PASSIVE_COOLING;
-checkAndAlert(TO_EMAIL,batteryCharTest1,50,&buf[0]);
+checkAndAlert(TO_EMAIL,batteryCharTest1,50);
 REQUIRE(strcmp( buf,srcHigh)==0);
 }
 
@@ -65,7 +65,7 @@ REQUIRE(strcmp( buf,srcHigh)==0);
 
 TEST_CASE("send email alert low") {
 batteryCharTest2.coolingType = HI_ACTIVE_COOLING;
-checkAndAlert(TO_EMAIL,batteryCharTest2,-10,&buf[0]);
+checkAndAlert(TO_EMAIL,batteryCharTest2,-10);
 REQUIRE(strcmp( buf,srcLow)==0);
 }
 
