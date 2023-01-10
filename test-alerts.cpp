@@ -25,22 +25,24 @@ TEST_CASE("F2_T3") {
   REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, -34) == TOO_LOW);
 }
 
+TEST_CASE("F2_T7") {
+  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 41) == TOO_HIGH);
+}
+TEST_CASE("F2_T8") {
+  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 35) == NORMAL);
+}
+TEST_CASE("F2_T9") {
+  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, -40) == TOO_LOW);
+}
+
 TEST_CASE("F2_T4") {
-  REQUIRE(classifyTemperatureBreach(HI_ACTIVE_COOLING, 37) == TOO_HIGH);
+  REQUIRE(classifyTemperatureBreach(HI_ACTIVE_COOLING, 46) == TOO_HIGH);
 }
 TEST_CASE("F2_T5") {
   REQUIRE(classifyTemperatureBreach(HI_ACTIVE_COOLING, 34) == NORMAL);
 }
 TEST_CASE("F2_T6") {
-  REQUIRE(classifyTemperatureBreach(HI_ACTIVE_COOLING, -34) == TOO_LOW);
+  REQUIRE(classifyTemperatureBreach(HI_ACTIVE_COOLING, -100) == TOO_LOW);
 }
-TEST_CASE("F2_T7") {
-  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 37) == TOO_HIGH);
-}
-TEST_CASE("F2_T8") {
-  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 34) == NORMAL);
-}
-TEST_CASE("F2_T9") {
-  REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, -34) == TOO_LOW);
-}
+
 
