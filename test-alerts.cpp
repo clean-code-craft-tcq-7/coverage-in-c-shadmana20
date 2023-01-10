@@ -4,8 +4,8 @@
 #include "typewise-alert.h"
 
 char buf[50];
-const char* srcHigh = "To:  a.b@c.com","Hi, the temperature is too high\n"
-const char* srcLow  = "To:  a.b@c.com","Hi, the temperature is too low\n"
+const char* srcHigh = "To:  a.b@c.com","Hi, the temperature is too high\n";
+const char* srcLow  = "To:  a.b@c.com","Hi, the temperature is too low\n";
 BatteryCharacter batteryCharTest1,batteryCharTest2;
 
 
