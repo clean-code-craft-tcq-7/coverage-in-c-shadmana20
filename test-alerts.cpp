@@ -15,3 +15,15 @@ TEST_CASE("Normal value test") {
 TEST_CASE("Same value test") {
   REQUIRE(inferBreach(20, 20, 20) == NORMAL);
 }
+TEST_CASE("F2_T1") {
+  REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, 37) == TOO_HIGH);
+}
+TEST_CASE("F2_T2") {
+  REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, 34) == NORMAL);
+}
+TEST_CASE("F2_T3") {
+  REQUIRE(classifyTemperatureBreach(PASSIVE_COOLING, -34) == TOO_LOW);
+}
+
+
+
