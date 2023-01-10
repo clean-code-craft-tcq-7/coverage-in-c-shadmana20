@@ -8038,6 +8038,12 @@ namespace Catch {
 
 #include <signal.h>
 
+#ifdef MINSIGSTKSZ
+#undef MINSIGSTKSZ
+#endif
+
+#define MINSIGSTKSZ 16384
+
 namespace Catch {
 
     struct FatalConditionHandler {
