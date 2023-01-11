@@ -36,13 +36,17 @@ void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double
 
 void sendToController(BreachType breachType) 
 {
+  TempFlags Tempflag;
   const unsigned short header = 0xfeed;
   printf("%x : %x\n", header, breachType);
+  Tempflag.FlagTypeController = USED;
 }
 
 void sendToEmail(BreachType breachType) 
 {
+  
   TempFlags Tempflag;
+  Tempflag.FlagTypeMail = USED;
   const char* recepient = "a.b@c.com";
   if(breachType == TOO_LOW)
   {
