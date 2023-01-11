@@ -1,6 +1,7 @@
 #pragma once
-#define SET   1
-#define RESET 0
+
+#define TEMPLOW  0
+#define TEMPHIGH 1
 
 typedef enum {
   PASSIVE_COOLING,
@@ -29,12 +30,13 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
+typedef struct {
+  int FlagHighTemp;
+  int FlagLowTemp;
+} TempFlags;
+
 void checkAndAlert(
   AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
 void sendToController(BreachType breachType);
 void sendToEmail(BreachType breachType);
-typedef struct{
-  int flagHighTemp = RESET;
-  int flagLowTemp  = RESET;
-}TempFlag
