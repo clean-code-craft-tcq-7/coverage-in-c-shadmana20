@@ -1,7 +1,6 @@
 #include "typewise-alert.h"
 #include <stdio.h>
 
-
 int CoolingUpperLimits[MAX_COOLING_TYPE] = {35 , 40, 45};
 
 void (*AlertTarget_func_ptr[TO_MAX])(BreachType) = {&sendToController, &sendToEmail};
@@ -43,16 +42,19 @@ void sendToController(BreachType breachType)
 
 void sendToEmail(BreachType breachType) 
 {
+  TempFlags Tempflag;
   const char* recepient = "a.b@c.com";
   if(breachType == TOO_LOW)
   {
     printf("To: %s\n", recepient);
     printf("Hi, the temperature is too low\n");
+    Tempflag.FlagLowTemp = TEMPLOW;
   }
 
   if(breachType == TOO_HIGH)
   {
      printf("To: %s\n", recepient);
      printf("Hi, the temperature is too high\n");
+    Tempflag.FlagHighTemp = TEMPHIGH;
   }
 }
