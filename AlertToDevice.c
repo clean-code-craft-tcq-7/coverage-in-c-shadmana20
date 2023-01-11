@@ -30,3 +30,4 @@ void sendToEmail(BreachType breachType)
      printf("Hi, the temperature is too high\n");
     Tempflag.FlagHighTemp = TEMPHIGH;
   }
+}
