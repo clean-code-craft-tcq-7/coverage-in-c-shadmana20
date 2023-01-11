@@ -10,7 +10,7 @@ const char* srcHigh = "Hi, the temperature is too high\n";
 const char* srcLow  = "Hi, the temperature is too low\n";
 BatteryCharacter batteryCharTest1,batteryCharTest2;
 TempFlags Tempflag;
-
+Tempflag = {.FlagHighTemp = LOW,.FlagLowTemp = HIGH,.FlagTypeMail = UNUSED, .FlagTypeController = UNUSED};
 
 TEST_CASE("LOW limit value test") {
   REQUIRE(inferBreach(12, 20, 30) == TOO_LOW);
