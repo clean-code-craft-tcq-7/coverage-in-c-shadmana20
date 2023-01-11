@@ -6,8 +6,6 @@
 #include <stdio.h>
 
 
-
-
 BatteryCharacter batteryCharTest1,batteryCharTest2;
 
 
