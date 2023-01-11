@@ -69,6 +69,7 @@ REQUIRE(Tempflag.FlagLowTemp == TEMPLOW);
 TEST_CASE("send email") {
 batteryCharTest2.coolingType = HI_ACTIVE_COOLING;
 checkAndAlert(TO_EMAIL,batteryCharTest2,-10);
+REQUIRE(Tempflag.FlagTypeController == UNUSED);
 REQUIRE(Tempflag.FlagTypeMail == USED);
 }
 
@@ -76,4 +77,5 @@ TEST_CASE("send controller") {
 batteryCharTest2.coolingType = HI_ACTIVE_COOLING;
 checkAndAlert(TO_CONTROLLER,batteryCharTest2,-10);
 REQUIRE(Tempflag.FlagTypeController == USED);
+REQUIRE(Tempflag.FlagTypeMail == UNUSED);
 }
