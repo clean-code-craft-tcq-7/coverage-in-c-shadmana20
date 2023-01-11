@@ -32,3 +32,7 @@ void checkAndAlert(
 
 void sendToController(BreachType breachType);
 void sendToEmail(BreachType breachType);
+typedef struct{
+  boolean flagHighTemp;
+  boolean flagLowTemp;
+}TempFlag
