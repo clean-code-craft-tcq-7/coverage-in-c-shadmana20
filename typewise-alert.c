@@ -1,6 +1,7 @@
 #include "typewise-alert.h"
 #include <stdio.h>
 
+TempFlags Tempflag;
 int CoolingUpperLimits[MAX_COOLING_TYPE] = {35 , 40, 45};
 
 void (*AlertTarget_func_ptr[TO_MAX])(BreachType) = {&sendToController, &sendToEmail};
@@ -36,7 +37,7 @@ void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double
 
 void sendToController(BreachType breachType) 
 {
-  TempFlags Tempflag;
+ 
   const unsigned short header = 0xfeed;
   printf("%x : %x\n", header, breachType);
   Tempflag.FlagTypeController = USED;
@@ -45,7 +46,7 @@ void sendToController(BreachType breachType)
 void sendToEmail(BreachType breachType) 
 {
   
-  TempFlags Tempflag;
+  
   Tempflag.FlagTypeMail = USED;
   const char* recepient = "a.b@c.com";
   if(breachType == TOO_LOW)
