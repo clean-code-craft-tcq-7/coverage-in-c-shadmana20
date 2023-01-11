@@ -1,9 +1,14 @@
 #pragma once
 
+#define TEMPLOW  0
+#define TEMPHIGH 1
+#define USED   1
+#define UNUSED 0
 typedef enum {
   PASSIVE_COOLING,
+  MED_ACTIVE_COOLING,
   HI_ACTIVE_COOLING,
-  MED_ACTIVE_COOLING
+  MAX_COOLING_TYPE
 } CoolingType;
 
 typedef enum {
@@ -17,13 +22,21 @@ BreachType classifyTemperatureBreach(CoolingType coolingType, double temperature
 
 typedef enum {
   TO_CONTROLLER,
-  TO_EMAIL
+  TO_EMAIL,
+  TO_MAX
 } AlertTarget;
 
 typedef struct {
   CoolingType coolingType;
   char brand[48];
 } BatteryCharacter;
+
+typedef struct {
+  int FlagHighTemp;
+  int FlagLowTemp ;
+  int FlagTypeMail;
+  int FlagTypeController;
+} TempFlags;
 
 void checkAndAlert(
   AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
