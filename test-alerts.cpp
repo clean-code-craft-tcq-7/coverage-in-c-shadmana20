@@ -10,7 +10,7 @@ const char* srcHigh = "Hi, the temperature is too high\n";
 const char* srcLow  = "Hi, the temperature is too low\n";
 BatteryCharacter batteryCharTest1,batteryCharTest2;
 
-TempFlags Tempflag;
+extern TempFlags Tempflag;
 
 
 
