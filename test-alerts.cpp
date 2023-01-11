@@ -3,6 +3,7 @@
 #include "test/catch.hpp"
 #include "typewise-alert.h"
 #include "string.h"
+#include <stdio.h>
 
 
 
@@ -67,7 +68,7 @@ checkAndAlert(TO_EMAIL,batteryCharTest1,50);
 TEST_CASE("send email alert low") {
 batteryCharTest2.coolingType = HI_ACTIVE_COOLING;
 checkAndAlert(TO_EMAIL,batteryCharTest2,-10);
-//REQUIRE(strcmp( buf,srcLow)!=0);
+//REQUIRE();
 }
 
 
