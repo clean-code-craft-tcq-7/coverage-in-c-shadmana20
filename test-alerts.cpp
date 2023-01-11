@@ -59,7 +59,7 @@ TEST_CASE("F2_T6") {
 TEST_CASE("send email alert high") {
 batteryCharTest1.coolingType = PASSIVE_COOLING;
 checkAndAlert(TO_EMAIL,batteryCharTest1,50);
-REQUIRE(Tempflag.FlagHighTemp == TEMPLOW);
+REQUIRE(Tempflag.FlagHighTemp == TEMPHIGH);
  }
 
 TEST_CASE("send email alert low") {
