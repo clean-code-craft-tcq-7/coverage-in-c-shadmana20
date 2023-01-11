@@ -1,7 +1,7 @@
 #include "typewise-alert.h"
 #include <stdio.h>
 
-TempFlags Tempflag;
+TempFlags Tempflag = {.FlagHighTemp = TEMPLOW ,.FlagLowTemp = TEMPHIGH,.FlagTypeMail = UNUSED, .FlagTypeController = UNUSED};
 int CoolingUpperLimits[MAX_COOLING_TYPE] = {35 , 40, 45};
 
 void (*AlertTarget_func_ptr[TO_MAX])(BreachType) = {&sendToController, &sendToEmail};
